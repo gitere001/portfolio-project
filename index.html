@@ -5,16 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/newcss.css" />
+    <link rel="stylesheet" href="passets/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="passets/newcss.css" />
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
     />
+    <style>
+      #submit-success-popup {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position to cover the entire viewport */
+        top: 20px; /* Position at the top */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Translate to perfect center */
+        background-color: #035817; /* Green background */
+        color: white; /* White text */
+        padding: 15px; /* Padding for spacing */
+        border-radius: 15px; /* Rounded corners */
+        z-index: 9999; /* High z-index to ensure it appears on top */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        transition: opacity 0.5s ease; /* Smooth fade out */
+      }
+
+      /* Error Popup Styles */
+      #submit-error-popup {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position to cover the entire viewport */
+        top: 20px; /* Position at the top */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Translate to perfect center */
+        background-color: #dc3545; /* Red background */
+        color: white; /* White text */
+        padding: 15px; /* Padding for spacing */
+        border-radius: 15px; /* Rounded corners */
+        z-index: 9999; /* High z-index to ensure it appears on top */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        transition: opacity 0.5s ease; /* Smooth fade out */
+      }
+  </style>
   </head>
 
   <body oncontextmenu="return false">
+
     <header class="header" id="header">
+      <a href="/" id="back-btn" style="position: absolute; top: 10px; left: 10px; background-color: #f0f0f0; padding: 10px; border-radius: 5px; text-decoration: none; color: black; font-weight: bold;">&larr; Back</a>
       <nav class="nav container">
         <a href="#" class="nav__logo">James Gitere</a>
         <div class="nav__menu" id="nav-menu">
@@ -87,6 +121,9 @@
               <svg
                 class="home__blob"
                 viewBox="0 0 200 187"
+                height="187"
+                width="200"
+
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
@@ -109,7 +146,7 @@
                     class="home__blob-img"
                     x="-79"
                     y="-46"
-                    xlink:href="assets/img/Pro.jpg"
+                    xlink:href="passets/img/pro3.jpg"
                   />
                 </g>
               </svg>
@@ -145,7 +182,7 @@
         <span class="section__subtitle">My introduction</span>
 
         <div class="about__container container grid">
-          <img src="assets\img\about.jpg" alt="" class="about__img" />
+          <img src="passets\img\about.jpg" alt="" class="about__img" />
 
           <div class="about__data">
             <p class="about__description">
@@ -169,7 +206,7 @@
             </div>
 
             <div class="about__buttons">
-              <a download="" href="assets\MyCV.pdf" class="button button--flex">
+              <a download="" href="passets\MyCV.pdf" class="button button--flex">
                 Download CV<i class="fas fa-download button__icon"></i>
               </a>
             </div>
@@ -349,7 +386,7 @@
           <div class="swiper-wrapper">
             <!-- ------------------------portfollio 1-------------------- -->
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio5.png" class="portfolio__img" />
+              <img src="passets/img/portfolio5.png" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">
@@ -377,7 +414,7 @@
             <!-- ------------------------portfollio 2-------------------- -->
 
             <div class="portfolio__content grid swiper-slide">
-              <img src="assets/img/portfolio1.png" class="portfolio__img" />
+              <img src="passets/img/portfolio1.png" class="portfolio__img" />
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">
@@ -434,7 +471,7 @@
               <div>
                 <h3 class="contact__title">Contact Me</h3>
                 <span class="contact__subtitle"
-                  ><a href="tel:6362243314"></a>0714584667</span
+                  ><a href="tel:6362243314"></a>+254714584667</span
                 >
               </div>
             </div>
@@ -462,41 +499,82 @@
             </div>
           </div>
 
-          <form action="" class="contact__form grid">
+          <form action="" class="contact__form grid" id="contact-form">
+
             <div class="contact__inputs grid">
               <div class="contact__content">
-                <label for="" class="content__label">Name</label>
-                <input type="text" class="contact__input" />
+                <label for="name" class="content__label">Name</label>
+                <input type="text" id="name" class="contact__input" />
               </div>
 
               <div class="contact__content">
-                <label for="" class="content__label">Email</label>
-                <input type="Email" class="contact__input" />
+                <label for="email" class="content__label">Email</label>
+                <input type="email" id="email" class="contact__input" />
               </div>
             </div>
 
             <div class="contact__content">
-              <label for="" class="content__label">Message</label>
+              <label for="message" class="content__label">Message</label>
               <textarea
-                name=""
-                id=""
+                id="message"
                 cols="0"
                 rows="7"
                 class="contact__input"
               ></textarea>
             </div>
-
             <div>
-              <a
-                href=" mailto: gitere.dev@gmail.com?subject=Testing out mailto! &body=This is only a test!"
-                class="button button--flex"
-              >
-                Send Message
-                <i class="uil uil-message button__icon"></i>
-              </a>
-            </div>
+              <button type="submit" class="button button--flex">
+                  Send Message
+                  <i class="uil uil-message button__icon"></i>
+              </button>
+          </div>
           </form>
+          <div id="submit-success-popup" class="success-popup" style="display:none;">
+          </div>
+
+          <!-- Error Popup -->
+          <div id="submit-error-popup" class="error-popup" style="display:none;">
+            <!-- Error message will be dynamically inserted here -->
+          </div>
         </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              const form = document.getElementById("contact-form");
+              const successPopup = document.getElementById("submit-success-popup");
+              const errorPopup = document.getElementById("submit-error-popup");
+
+              form.addEventListener("submit", function (event) {
+                  event.preventDefault(); // Prevent the default form submission
+
+                  const name = document.getElementById("name").value;
+                  const email = document.getElementById("email").value;
+                  const message = document.getElementById("message").value;
+                  if (name && email && message) {
+                      successPopup.style.display = "block";
+                      successPopup.innerText = "Thank you for reaching out! I'll get back to you soon.";
+                      form.reset();
+                      setTimeout(function () {
+                          successPopup.style.display = "none";
+                      }, 3000);
+                  } else {
+                      errorPopup.style.display = "block";
+                      if (!name) {
+                          errorPopup.innerText = "Please enter your name.";
+                      } else if (!email) {
+                          errorPopup.innerText = "Please enter your email address.";
+                      } else if (!message) {
+                          errorPopup.innerText = "Please enter your message.";
+                      }
+
+                      setTimeout(function () {
+                          errorPopup.style.display = "none";
+                      }, 3000);
+                  }
+
+              });
+
+          });
+      </script>
       </section>
     </main>
 
@@ -548,8 +626,8 @@
       <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
-    <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="passets/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
-    <script src="assets/ptj.js"></script>
+    <script src="passets/ptj.js"></script>
   </body>
 </html>
